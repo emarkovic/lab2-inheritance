@@ -1,4 +1,4 @@
-class Checking {
+class CheckingAccount {
 	private ownerName:string;
 	private balance:number;	
 	
@@ -16,11 +16,11 @@ class Checking {
 	}
 
 	checkBalance() {
-		console.log(`Balanace for {this.ownerName}'s checking account: ${this.balance}`);
+		console.log(`Balanace for ${this.ownerName}'s checking account: $${this.balance}`);
 	}	
 }
 
-let myChecking = new Checking('Ena', 10000);
+let myChecking = new CheckingAccount('Ena', 10000);
 console.log('initial balance');
 myChecking.checkBalance();
 console.log('deposited 1000');
