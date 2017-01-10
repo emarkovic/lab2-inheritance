@@ -16,6 +16,32 @@ var Account = {
   }
 }
 
+var CheckingAccount = Object.create(Account);
+CheckingAccount.checkBalance = function () {
+  console.log('Checking account');
+  Account.checkBalance();
+}
+
+var SavingsAccount = Object.create(Account);
+SavingsAccount.withdrawls = 0;
+SavingsAccount.checkBalance = function () {
+  console.log('Savings account');
+  Account.checkBalance();
+}
+SavingsAccount.withdraw = function (amount) {
+  if (this.balance > 0) {
+    if (this.withdrawls < 3) {
+      Account.withdraw();
+      this.withdrawls--;
+    } else {
+      console.log('Cannot withdraw, exceeds limit');
+    }
+  } else {
+    console.log('Cannot withdraw, balance is 0');
+  }
+}
+
+
 
 
 // create a new Account object by using account object as the proto
@@ -30,4 +56,3 @@ account.deposit(40);
 account.checkBalance();
 account.withdraw(30);
 account.checkBalance();
-
