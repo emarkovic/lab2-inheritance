@@ -55,14 +55,17 @@ class SavingsAccount extends Account {
 }
 
 let mySavings:Account = new SavingsAccount('Ena', 1000);
-// mySavings.checkBalance();
+mySavings.checkBalance();
 mySavings.withdraw(100);
 mySavings.withdraw(100);
 mySavings.withdraw(100);
-// mySavings.checkBalance();
+mySavings.checkBalance();
 //limit
 mySavings.withdraw(100);
-// mySavings.checkBalance();
+mySavings.checkBalance();
+console.log('depositing 1000');
+mySavings.deposite(1000);
+mySavings.checkBalance();
 
 let myChecking:Account = new CheckingAccount('Ena', 1000);
 myChecking.checkBalance();
@@ -73,8 +76,9 @@ myChecking.checkBalance();
 //savings limit, shouldnt effect checking
 myChecking.withdraw(100);
 myChecking.checkBalance();
-
-
+console.log('depositing 1000');
+myChecking.deposite(1000);
+myChecking.checkBalance();
 
 
 
