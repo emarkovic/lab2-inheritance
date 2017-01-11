@@ -21,6 +21,10 @@ CheckingAccount.checkBalance = function () {
   console.log('Checking account');
   Account.checkBalance();
 }
+CheckingAccount.owner = 'Ena';
+CheckingAccount.balance = 20;
+console.log(CheckingAccount)
+CheckingAccount.checkBalance();
 
 var SavingsAccount = Object.create(Account);
 SavingsAccount.withdrawls = 0;
@@ -42,17 +46,13 @@ SavingsAccount.withdraw = function (amount) {
 }
 
 
-
-
 // create a new Account object by using account object as the proto
-let account = Object.create(Account);
-
+let account = Object.create(CheckingAccount);
 // give the account an owner and a balance (since we can't have a constructor with this syntax)
 account.owner = "Ethan";
 account.balance = 20;
-
-account.checkBalance();
-account.deposit(40);
-account.checkBalance();
-account.withdraw(30);
-account.checkBalance();
+// account.checkBalance();
+// account.deposit(40);
+// account.checkBalance();
+// account.withdraw(30);
+// account.checkBalance();
